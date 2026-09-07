@@ -1,0 +1,34 @@
+{
+  "project_info": {
+    "project_number": "1093058896681",
+    "project_id": "brave-idiom-dcbh2",
+    "storage_bucket": "brave-idiom-dcbh2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1093058896681:android:97a79f2cc0aa4ef48e4b37",
+        "android_client_info": {
+          "package_name": "com.kotha.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1093058896681-m17ao0iumlundi29fkcm02494h3bal5i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeO_IGa5pk-x9Hszp0gr77V2LQXeZjUgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

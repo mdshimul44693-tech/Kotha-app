@@ -1,0 +1,14 @@
+export const firebaseConfig = {
+  projectId: "brave-idiom-dcbh2",
+  appId: "1:1093058896681:web:fa1abbb3dc2ea552c3cd38",
+  apiKey: "AIzaSyBeO_IGa5pk-x9Hszp0gr77V2LQXeZjUgs",
+  authDomain: "brave-idiom-dcbh2.firebaseapp.com",
+  firestoreDatabaseId: "ai-studio-kotha-97a79f2c-c0aa-4ef4-8e4b-37b58829a973",
+  storageBucket: "brave-idiom-dcbh2.firebasestorage.app",
+  messagingSenderId: "1093058896681",
+  measurementId: "",
+  oAuthClientId: "1093058896681-m17ao0iumlundi29fkcm02494h3bal5i.apps.googleusercontent.com",
+  recaptchaSiteKey: ""
+};
+
+export default firebaseConfig;

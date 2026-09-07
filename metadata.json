@@ -1,0 +1,11 @@
+{
+  "name": "Kotha",
+  "description": "A production-ready Android communication app with real-time messaging, voice calls, video calls, contacts, voice messages, notifications, and Bengali/English language support.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
