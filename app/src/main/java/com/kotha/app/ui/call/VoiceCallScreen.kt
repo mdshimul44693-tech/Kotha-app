@@ -280,7 +280,7 @@ fun VoiceCallScreen(
             // Audio routing feedback
             Row(
                 horizontalArrangement = Arrangement.Center,
-                verticalAlignment = Alignment.CenterVertizontally,
+                verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.padding(vertical = 8.dp)
             ) {
                 Icon(
@@ -366,7 +366,7 @@ fun VoiceCallScreen(
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceEvenly,
-                        verticalAlignment = Alignment.CenterVertizontally
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
                         // Mute Button
                         IconButton(

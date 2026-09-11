@@ -78,7 +78,7 @@ class KothaRingtoneManager(private val context: Context) {
                 setOnPreparedListener { mp ->
                     try {
                         mp.start()
-                        isPlaying = true
+                        this@KothaRingtoneManager.isPlaying = true
                         Log.d(TAG, "Incoming ringtone playing through loudspeaker.")
                     } catch (e: Exception) {
                         Log.e(TAG, "Failed to start prepared MediaPlayer", e)

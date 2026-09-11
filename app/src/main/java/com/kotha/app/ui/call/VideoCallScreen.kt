@@ -104,6 +104,25 @@ fun VideoCallScreen(
     var isSpeakerOn by remember { mutableStateOf(true) }
     var errorMessage by remember { mutableStateOf<String?>(null) }
 
+    // Signaling & Negotiation Flags
+    var cachedOfferSdp by remember { mutableStateOf(session?.offer?.sdp) }
+    var isAnswerCreated by remember { mutableStateOf(false) }
+    var isAnswerApplied by remember { mutableStateOf(false) }
+    var isReceiverAccepted by remember { mutableStateOf(false) }
+    var isPipelineInitialized by remember { mutableStateOf(false) }
+    // Surface Renderers and Tracks
+    var localRenderer by remember { mutableStateOf<SurfaceViewRenderer?>(null) }
+    var remoteRenderer by remember { mutableStateOf<SurfaceViewRenderer?>(null) }
+    var remoteVideoTrack by remember { mutableStateOf<VideoTrack?>(null) }
+    var internalWebRtcClient by remember { mutableStateOf<WebRtcClient?>(null) }
+    // Infrastructure Managers
+    val ringtoneManager = remember { KothaRingtoneManager(context) }
+    val audioSwitchManager = remember {
+        KothaAudioSwitchManager(context) { device ->
+            isSpeakerOn = (device == AudioDevice.SPEAKERPHONE)
+        }
+    }
+    val signalingClient = remember { FirestoreSignalingClient() }
     fun triggerCameraSwitch() {
         if (isSwitchingCamera || isCameraOff) return
         val client = internalWebRtcClient ?: return
@@ -128,27 +147,6 @@ fun VideoCallScreen(
         )
     }
 
-    // Signaling & Negotiation Flags
-    var cachedOfferSdp by remember { mutableStateOf(session?.offer?.sdp) }
-    var isAnswerCreated by remember { mutableStateOf(false) }
-    var isAnswerApplied by remember { mutableStateOf(false) }
-    var isReceiverAccepted by remember { mutableStateOf(false) }
-    var isPipelineInitialized by remember { mutableStateOf(false) }
-
-    // Surface Renderers and Tracks
-    var localRenderer by remember { mutableStateOf<SurfaceViewRenderer?>(null) }
-    var remoteRenderer by remember { mutableStateOf<SurfaceViewRenderer?>(null) }
-    var remoteVideoTrack by remember { mutableStateOf<VideoTrack?>(null) }
-    var internalWebRtcClient by remember { mutableStateOf<WebRtcClient?>(null) }
-
-    // Infrastructure Managers
-    val ringtoneManager = remember { KothaRingtoneManager(context) }
-    val audioSwitchManager = remember {
-        KothaAudioSwitchManager(context) { device ->
-            isSpeakerOn = (device == AudioDevice.SPEAKERPHONE)
-        }
-    }
-    val signalingClient = remember { FirestoreSignalingClient() }
 
     // Synchronized duration timer based on authoritative Firestore connectedAt timestamp
     LaunchedEffect(currentCallState, connectedAtTimestamp) {

@@ -458,6 +458,9 @@ class WebRtcClient(
                 Log.d(TAG, "[WebRTC-Diagnostics] SignalingState: $state")
             }
 
+            override fun onIceConnectionReceivingChange(receiving: Boolean) {
+                Log.d(TAG, "[WebRTC-ICE-Diagnostics] IceConnectionReceivingChange: $receiving")
+            }
             override fun onIceConnectionChange(state: PeerConnection.IceConnectionState?) {
                 Log.d(TAG, "[WebRTC-ICE-Diagnostics] IceConnectionState: $state")
                 when (state) {
